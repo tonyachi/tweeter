@@ -42,3 +42,6 @@ textarea {
   font-weight: bold;
   font-family: 'Bungee', cursive;
 }
+.counter.error {
+ color: red;
+}
