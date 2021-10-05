@@ -12,13 +12,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:wght@300;600&display=swap" rel="stylesheet">
 
     <!--Icons from FontAwesome-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -39,7 +40,7 @@
         </div>
       </div>
     </nav>
-    <header>
+    <header class="profile">
       <div class="image-container">
           <img src="/images/profile-hex.png"> 
       </div>
@@ -63,6 +64,27 @@
           </div>
         </form>
       </section>
+      <article class="tweet-container">
+        <header class="tweets">
+          <div class="user">
+            <img class="avatar" src="https://i.imgur.com/nlhLi3I.png" alt="avatar">
+            <div class="name">Rhonda Jacobs</div>
+          </div>
+          <div class="handle">@MrsJacobs</div>
+        </header>
+        <div class="content">
+          <p>If I have seen further it is by standing on the shoulders of giants</p>
+        </div>
+        <div class="line"></div>
+        <footer class="tweet">
+          <div class="data">10 days ago</div>
+          <div class="icon-container">
+            <i class="fas fa-flag"></i>
+            <i class="fas fa-retweet"></i>
+            <i class="fas fa-heart"></i>
+          </div>
+        </footer>
+      </article>
     </main>
   </body>
 </html>
