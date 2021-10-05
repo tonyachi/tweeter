@@ -1,5 +1,6 @@
 header {
   display: flex;
+  padding-top: 120px;
   flex-direction: column;
   min-height: 400px;
   width: 100%;
@@ -9,12 +10,7 @@ header {
   background-image: url("https://www.transparenttextures.com/patterns/subtle-zebra-3d.png");
 }
 
-.image-container {
-  padding: 120px 0 0 0;
-}
-.name-containet {
-}
-h2{
+.user-name {
   font-family: inherit;
   color: white;
 }
