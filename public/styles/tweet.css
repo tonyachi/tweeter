@@ -1,12 +1,20 @@
-article.tweet-container {
+article#tweets-container {
   margin: 70px 20px;
   padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.tweet-container {
+  margin: 20px 40px;
   border: 4px solid #545149;
 }
+.tweet-container:hover {
+  box-shadow: 5px 4px 5px -2px #000000;
+  transition: all .2s;
+}
 header.tweets {
+  margin: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -39,17 +47,18 @@ footer.tweet {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 20px 0 0 20px;
+  margin: 20px;
 }
 .data {
   font-weight: bold;
   font-size: .9em;
 }
-.icon-container i {
+.icons i {
   margin-left: 10px;
   color: #4056A1;
 }
-.icon-container i:hover {
+.icons i:hover {
   color: #ff9d4e;
-  transition: .3s;
+  transition: all .3s;
+  cursor: pointer;
 }
