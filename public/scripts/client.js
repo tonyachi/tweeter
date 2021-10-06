@@ -34,47 +34,41 @@ $(() => {
 
   //function to render tweet to HTML
   const createTweetElement = (tweet) => {
-    
-    //create tweet header elements
-    const $avatar = $('<img>').addClass('avatar').attr('src', tweet.user.avatars).attr('alt', 'avatar');
-    const $name = $('<div>').addClass('name').text(tweet.user.name);
-    const $handle = $('<div>').addClass('handle').text(tweet.user.handle);
-    const $user = $('<div>').addClass('user').append($avatar, $name);
-    //create tweet header
-    const $header = $('<header>').addClass('tweets').append($user, $handle);
-
-    //create tweet content elements
-    const $text = $('<p>').text(tweet.content.text);
-    const $line = $('<div>').addClass('line');
-    //create tweet content
-    const $content = $('<div>').addClass('content').append($text, $line);
-
-    //create footer elements
-    const data = timeago.format(tweet.created_at);
-    const $data = $('<div>').addClass('data').text(data);
-    //create icon elements for footer
-    const $flag = $('<i>').addClass('fas fa-flag');
-    const $retweet = $('<i>').addClass('fas fa-retweet');
-    const $heart = $('<i>').addClass('fas fa-heart');
-    const $icons = $('<div>').addClass('icons').append($flag, $retweet, $heart);
-    //create footer
-    const $footer = $('<footer>').addClass('tweet').append($data, $icons);
-
-    //create tweet component
-    const $tweet = $('<div>').addClass('tweet-container').append($header, $content, $footer);
-
-    //return HTML for tweets section
+    console.log(tweet)
+    const $tweet = `
+                  <div class="tweet-container">
+                    <header class="tweets">
+                      <div class="user">
+                        <img class="avatar" src="${tweet.user.avatars}" alt="avatar">
+                        <div class="name">${tweet.user.name}</div>
+                      </div>
+                      <div class="handle">${tweet.user.handle}</div>
+                    </header>
+                    <div class="content">
+                      <p>${tweet.content.text}</p>
+                    </div>
+                    <div class="line"></div>
+                    <footer class="tweet">
+                      <div class="data">${timeago.format(tweet.created_at)}</div>
+                      <div class="icons">
+                        <i class="fas fa-flag"></i>
+                        <i class="fas fa-retweet"></i>
+                        <i class="fas fa-heart"></i>
+                      </div>
+                    </footer>
+                  </div>`;
     $('#tweets-container').append($tweet);
     return;
   }
-
-    //function to retrieve tweet from tweets
-    const renderTweets = (tweets) => {
-      for (const tweet of tweets) {
-        createTweetElement(tweet);
-      }
+  
+  
+  //function to retrieve tweet from tweets
+  const renderTweets = (tweets) => {
+    for (const tweet of tweets) {
+      createTweetElement(tweet);
     }
-
+  }
+  
   renderTweets(data);
- 
+
 });
