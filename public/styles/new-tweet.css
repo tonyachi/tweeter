@@ -9,23 +9,24 @@
   margin: auto;
   display: flex;
   flex-direction: column;
-
 }
-
 button#new-tweet {
   border: none;
   background-color: #4056A1;
   color: white;
   font-family: 'Bungee', cursive;
   padding: 5px 10px;
+  cursor: pointer;
 }
-
+button#new-tweet:disabled {
+  background-color: #4057a142;
+  cursor: not-allowed;
+}
 .text-box {
   display: flex;
   flex-direction: column;
   padding: 20px 0;
 }
-
 label {
   font-weight: bold;
   font-size: 1.2em;
@@ -36,6 +37,16 @@ textarea {
   border-bottom: 4px solid #545149;
   background-color: inherit;
   outline: none;
+}
+.error-message{
+  border: 1px solid;
+  margin: 10px 0px;
+  padding: 15px 10px 15px 50px;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  color: #D8000C;
+  background-color: #FFBABA;
+  background-image: url('https://i.imgur.com/GnyDvKN.png');
 }
 .counter {
   float: right;

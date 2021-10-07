@@ -4,6 +4,13 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 $(() => {
+  //function to escape unsafe input from user
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   //function to load tweet with AJAX
   const loadTweets = () => {
     $.ajax({
@@ -30,7 +37,7 @@ $(() => {
                         <div class="handle">${tweet.user.handle}</div>
                       </header>
                       <div class="content">
-                        <p>${tweet.content.text}</p>
+                        <p>${escape(tweet.content.text).replace(/%20/g, '').replace('%3F', '?').replace('%21', '!')}</p>
                       </div>
                       <div class="line"></div>
                       <footer class="tweet">
@@ -42,28 +49,38 @@ $(() => {
                         </div>
                       </footer>
                     </div>`;
-    $('#tweets-container').append($tweet);
+    $('#tweets-container').prepend($tweet);
     return;
   };  
   
   //function to retrieve tweet from tweets
   const renderTweets = (tweets) => {
+    const $tweetContainer = $('#tweets-container');
+    $tweetContainer.empty();
+
     for (const tweet of tweets) {
       createTweetElement(tweet);
     }
-  };
+  }; 
   
-  //handle form submit event
-  const $form = $('#new-tweet-form');
-
-  $form.submit(function(event) {
-    event.preventDefault();
-    console.log('form was submitted');
-    const serializedData = $(this).serialize();
-
-    $.post('/tweets/', serializedData);
-  });
-
   loadTweets();
 
+  //handle form submit event
+  const $form = $('#new-tweet-form');
+  $form.submit(function(event) {
+    event.preventDefault();
+    const serializedData = $(this).serialize();
+    const textareaValue = $('#tweet-text').val();
+
+    if (textareaValue.length > 140) {
+      const $error = $('<div>').text('Your message is too long.').addClass('error-message');
+      $('.text-box').append($error);
+    } else {
+      $.post('/tweets/', serializedData, (response) => {
+        console.log('form was submitted');
+        $('#tweet-text').val('');
+        loadTweets();
+      });
+    }
+  });
 });
