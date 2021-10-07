@@ -22,14 +22,14 @@ body {
 
 /* Additional CSS can be defined below or in other CSS files, as per instructions */
 .main {
-  width: 90%;
+  width: 90vw;
   align-self: center;
   background-color: inherit;
 }
 
 /* Scrollbar styles*/
 body::-webkit-scrollbar {
-  width: 12px;
+  width: .6em;
 }
 body::-webkit-scrollbar-track {
   background: #ff9d4e;
@@ -38,4 +38,3 @@ body::-webkit-scrollbar-thumb {
   background-color: #4056A1;  
   border: 3px solid #ff9d4e;
 }
-

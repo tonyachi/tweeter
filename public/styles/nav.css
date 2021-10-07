@@ -1,14 +1,13 @@
 nav {
   position: fixed;
-  height: 120px;
+  height: 5em;
   width: 100vw;
-  display: flex;
-  background-color: #4056A1;
-  color: #FFFFFF;
+  display: flex;  
+  color: #ffffff
 }
 
 .logo-container {
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -18,17 +17,18 @@ nav {
 
 .logo {
   font-family: 'Bungee', cursive;
-  font-size: 1.5em;
+  font-size: 1.7em;
 }
 
-.logo-container .content {
+.content {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 1.2em;
 }
 
 i.fa-angle-double-down {
-  color: red;
+  color: #D8000C;
   animation: bounce 2s infinite;
 }
 

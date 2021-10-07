@@ -4,40 +4,48 @@
   justify-content: center;
   color: #545149;
 }
+
 .new-tweet {
   width: 90vw;
   margin: auto;
   display: flex;
   flex-direction: column;
 }
+
 button#new-tweet {
   border: none;
   background-color: #4056A1;
-  color: white;
+  color: #ffffff;
   font-family: 'Bungee', cursive;
   padding: 5px 10px;
   cursor: pointer;
 }
+
 button#new-tweet:disabled {
   background-color: #4057a142;
   cursor: not-allowed;
 }
+
 .text-box {
   display: flex;
   flex-direction: column;
   padding: 20px 0;
+  margin: 20px 20px 20px 0;
 }
+
 label {
   font-weight: bold;
   font-size: 1.2em;
   color: #545149;
 }
+
 textarea {
   border: none;
   border-bottom: 4px solid #545149;
   background-color: inherit;
-  outline: none;
+  outline: none;  
 }
+
 .error-message{
   border: 1px solid;
   margin: 10px 0px;
@@ -48,11 +56,13 @@ textarea {
   background-color: #FFBABA;
   background-image: url('https://i.imgur.com/GnyDvKN.png');
 }
+
 .counter {
   float: right;
   font-weight: bold;
   font-family: 'Bungee', cursive;
 }
+
 .counter.error {
- color: red;
+ color: #D8000C;
 }

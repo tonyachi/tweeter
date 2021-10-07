@@ -1,9 +1,5 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
 $(() => {
+
   //function to escape unsafe input from user
   const escape = function (str) {
     let div = document.createElement("div");
@@ -11,7 +7,7 @@ $(() => {
     return div.innerHTML;
   };
 
-  //function to load tweet with AJAX
+  //function to load tweets with AJAX
   const loadTweets = () => {
     $.ajax({
       url: '/tweets/',
@@ -64,19 +60,19 @@ $(() => {
   
   loadTweets();
 
-  //handle form submit event
+  //handle form submit and send data to sever
   const $form = $('#new-tweet-form');
   $form.submit(function(event) {
     event.preventDefault();
     const serializedData = $(this).serialize();
     const textareaValue = $('#tweet-text').val();
-
+    //check input value before POST
     if (textareaValue.length > 140) {
-      const $error = $('<div>').text('Your message is too long.').addClass('error-message');
+      const $error = $('<div>').text('Your message is too long. Maximum length exceeded.').addClass('error-message');
       $('.text-box').append($error);
     } else {
       $.post('/tweets/', serializedData, (response) => {
-        console.log('form was submitted');
+        console.log(response);
         $('#tweet-text').val('');
         loadTweets();
       });

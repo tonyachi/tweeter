@@ -1,16 +1,23 @@
 header.profile {
   display: flex;
-  padding-top: 120px;
   flex-direction: column;
-  min-height: 400px;
-  width: 100%;
+  width: 100vw;
   justify-content: center;
-  align-items: center;
-  background-color: #ff9d4e;
-  background-image: url("https://www.transparenttextures.com/patterns/subtle-zebra-3d.png");
+  align-items: center;  
 }
 
-.user-name {
+.user-name {  
   font-family: inherit;
-  color: white;
+  color: #ffffff;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-width: 100vw;
+  min-height: 400px;
+  background-color: #ff9d4e;
+  background-image: url("https://www.transparenttextures.com/patterns/subtle-zebra-3d.png");
 }

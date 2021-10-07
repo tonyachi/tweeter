@@ -1,0 +1,21 @@
+/* Desktop styles */
+header.profile { 
+  width: 35vw;
+  float: left;
+  flex-direction: row;
+}
+
+.profile-container {
+  min-width: 30vw;
+  min-height: 30vw;
+  margin-top: 12em;
+}
+
+.new-tweet {
+  margin-top: 10em;
+  width: 60vw;
+}
+
+nav {
+  background-color: #4056A1;
+}
