@@ -29,4 +29,21 @@ nav {
 
 i.fa-angle-double-down {
   color: red;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  25%,
+  50%,
+  75%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(5px);
+  }
+  60% {
+    transform: translateY(2px);
+  }
 }

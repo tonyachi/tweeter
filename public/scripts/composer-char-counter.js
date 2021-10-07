@@ -1,5 +1,5 @@
 $(() => {
-  $('textarea').keypress(function() {
+  $('textarea').keyup(function() {
     let count = this.value.length;
     let counter = 140;
     if (count <= counter) {

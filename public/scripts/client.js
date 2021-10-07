@@ -55,8 +55,7 @@ $(() => {
   
   //function to retrieve tweet from tweets
   const renderTweets = (tweets) => {
-    const $tweetContainer = $('#tweets-container');
-    $tweetContainer.empty();
+   $('#tweets-container').empty();
 
     for (const tweet of tweets) {
       createTweetElement(tweet);
