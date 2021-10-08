@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
     <!-- Meta Information -->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
     <title>Tweeter - Home Page</title>
 
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+
     <!-- External Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,12 +22,13 @@
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
+
     <!-- Desktop styles Media Queries-->
     <link rel="stylesheet" href="/styles/media.css" type="text/css" media="(min-width: 1024px)">
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous"
     referrerpolicy="no-referrer">
     </script>
 
@@ -42,10 +44,13 @@
         <span class="logo">tweeter</span>
         <div class="content">
           <span><strong>Write</strong> a new tweet</span>
-          <i class="fas fa-angle-double-down"></i>
+          <a href="#new-tweet-section">
+            <i class="fas fa-angle-double-down"></i>
+          </a>
         </div>
       </div>
     </nav>
+
     <!-- Header section -->
     <header class="profile">
       <div class="profile-container">
@@ -53,8 +58,9 @@
           <h2 class="user-name"><strong>Amy</strong> Mansell</h2>
       </div>
     </header>
+
     <!-- Add new tweet section -->
-    <main class="container">
+    <main class="container" id="new-tweet-section">
       <section class="new-tweet">
         <form id="new-tweet-form" method="POST" action="/tweets/">
           <div class="text-box">
@@ -67,9 +73,10 @@
           </div>
         </form>
       </section>
+
       <!-- All posted tweets section -->
       <article id="tweets-container">
-      </article>     
+      </article>
     </main>    
   </body>
 </html>
