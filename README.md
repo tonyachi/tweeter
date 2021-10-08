@@ -2,7 +2,7 @@
 
 Tweeter is a simple, single-page old Twitter clone.
 
-I forked the starter code for the project and clone it to my repository, then I built upon it to practice my HTML, CSS, JS, jQuery and AJAX front-end skills, and my Node, Express and MongoDB back-end skills.
+I forked the starter code for the project and cloned it to my repository, then I built upon it to practice my HTML, CSS, JS, jQuery and AJAX front-end skills, and my Node, Express and MongoDB back-end skills.
 
 ## Getting Started
 
