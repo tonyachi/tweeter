@@ -1,7 +1,7 @@
 $(() => {
 
   //function to escape unsafe input from user
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -19,7 +19,7 @@ $(() => {
       error: (err) => {
         console.log(`there was an error: ${err}`);
       }
-    })
+    });
   };
 
   //function to render tweet to HTML
@@ -47,25 +47,27 @@ $(() => {
                     </div>`;
     $('#tweets-container').prepend($tweet);
     return;
-  };  
+  };
   
   //function to retrieve tweet from tweets
   const renderTweets = (tweets) => {
-   $('#tweets-container').empty();
+    $('#tweets-container').empty();
 
     for (const tweet of tweets) {
       createTweetElement(tweet);
     }
-  }; 
+  };
   
   loadTweets();
 
   //handle form submit and send data to sever
   const $form = $('#new-tweet-form');
+
   $form.submit(function(event) {
     event.preventDefault();
     const serializedData = $(this).serialize();
     const textareaValue = $('#tweet-text').val();
+
     //check input value before POST
     if (textareaValue.length > 140) {
       const $error = $('<div>').text('Your message is too long. Maximum length exceeded.').addClass('error-message');

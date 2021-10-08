@@ -1,7 +1,8 @@
 $(() => {
   $('textarea').keyup(function() {
-    let count = this.value.length;
     const counter = 140;
+    let count = this.value.length;
+    
     if (count <= counter) {
       $('.counter').text(counter - count).removeClass('error');
       $('.error-message').remove();
@@ -9,4 +10,4 @@ $(() => {
       $('.counter').text(counter - count).addClass('error');
     }
   });
-})
+});
